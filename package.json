@@ -1,0 +1,49 @@
+{
+  "name": "my-app",
+  "productName": "Рекордер екрану",
+  "version": "1.0.0",
+  "description": "Рекордер екрану на Electron",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "my-app",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "uninstallDisplayName": "Screen Recorder",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "30.0.9",
+    "electron-builder": "^24.13.3"
+  },
+  "keywords": [],
+  "author": "kudo",
+  "license": "MIT",
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}
